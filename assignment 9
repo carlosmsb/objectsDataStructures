@@ -1,0 +1,40 @@
+primitives vs objects
+- first example is using the comparison == ; using name reference to a string object. boolean returns false.
+- second example is correct since its using a primitive type (char) using == to compare a value. this works correct.
+
+2.data structure design
+
+package week6;
+
+import acm.program.ConsoleProgram;
+
+	
+public class ExpandableArray {
+		
+public ExpandableArray() {
+		array = new Object[0]; 
+		}
+		
+public void set(int index, Object value) {
+	if (index >= array.length) {
+
+		Object[] newArray = new Object[index + 1];
+		
+	for (int i = 0; i < array.length; i++) {
+		newArray[i] = array[i];
+		}
+
+		array = newArray;
+		}
+		array[index] = value;
+		}
+		
+		
+public Object get(int index) {
+	if (index >= array.length) return null;
+		return array[index];
+		}
+		
+		private Object[] array;
+		}
+	
